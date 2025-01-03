@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 const router = require("./routes/userRoute");
+const groupRouter = require("./routes/grouRoute");
 const http = require("http");
 const socket = require("socket.io");
 const socketIo = require("./socket");
@@ -34,6 +35,7 @@ mongoose
 socketIo(io);
 
 app.use("/api/users", router);
+app.use("/api/group", groupRouter);
 
 server.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
