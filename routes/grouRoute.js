@@ -31,7 +31,7 @@ groupRouter.get("/get-all", protect, async (req, res) => {
   }
 });
 //join
-groupRouter.get("/:groupId/join", protect, async (req, res) => {
+groupRouter.post("/:groupId/join", protect, async (req, res) => {
   try {
     const group = await Group.findById(req.params.groupId);
     if (!group) {
