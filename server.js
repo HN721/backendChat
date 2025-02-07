@@ -2,13 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
-dotenv.config();
 const router = require("./routes/userRoute");
 const groupRouter = require("./routes/grouRoute");
 const http = require("http");
 const socket = require("socket.io");
 const socketIo = require("./socket");
 const messageRouter = require("./routes/messageRoute");
+dotenv.config();
 
 const app = express();
 
@@ -16,18 +16,13 @@ const server = http.createServer(app);
 
 const io = socket(server, {
   cors: {
-    origin: "https://smankabtang.vercel.app",
+    origin: ["http://localhost:5173", "https://smankabtang.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
-app.use(
-  cors({
-    origin: "https://smankabtang.vercel.app",
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
+//middlewares
+app.use(cors());
 app.use(express.json());
 
 mongoose
