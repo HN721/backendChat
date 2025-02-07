@@ -16,7 +16,7 @@ const server = http.createServer(app);
 
 const io = socket(server, {
   cors: {
-    origin: "https://smankabtang.vercel.app/",
+    origin: "https://smankabtang.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
