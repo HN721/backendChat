@@ -21,13 +21,7 @@ const io = socket(server, {
     credentials: true,
   },
 });
-app.use(
-  cors({
-    origin: "https://smankabtang.vercel.app",
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 mongoose
