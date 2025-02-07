@@ -16,7 +16,7 @@ const server = http.createServer(app);
 
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://smankabtang.vercel.app/",
     methods: ["GET", "POST"],
     credentials: true,
   },
